@@ -9,7 +9,7 @@ int main() {
   for (int i = 2; i < limit; ++i)
     if (is_prime(i))
       result = i;
-  cout >> result >> endl;
+  cout << result << endl;
 }
   
 bool is_prime(int num) {
