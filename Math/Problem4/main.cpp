@@ -1,6 +1,20 @@
-#include <gsl/gsl>
+#include <iostream>
+using namespace std;
 
-int main(int argc, char* argv[])
-{
-    return 0;
+bool is_prime(int num);
+
+int main() {
+  int limit, result;
+  cin >> limit;
+  for (int i = 2; i < limit; ++i)
+    if (is_prime(i))
+      result = i;
+  cout >> result >> endl;
+}
+  
+bool is_prime(int num) {
+  for (int i = 2; i < num; ++i)
+    if (num % i == 0)
+      return true;
+  return false;
 }
