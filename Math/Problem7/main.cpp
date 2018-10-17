@@ -7,10 +7,19 @@ using namespace std;
 
 int get_sum_of_proper_divisors(int num);
 
+map<int, int> m;
+
 int main() {
-  int num;
-  cin >> num;
-  cout << get_sum_of_proper_divisors(num) << endl;
+  int sum;
+  for (int i = 220; i < MAX; ++i) {
+    sum = m[i];
+    if (sum == 0)
+      m[i] = sum = get_sum_of_proper_divisors(i);
+    if (m[sum] == 0)
+      m[sum] = get_sum_of_proper_divisors(sum);
+    if (m[sum] == i)
+      cout << i << ' ' << sum << endl;
+  }
 }
 int get_sum_of_proper_divisors(int num) {
   int q, r, sum = 1;
