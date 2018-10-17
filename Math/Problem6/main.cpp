@@ -9,6 +9,6 @@ int main() {
       if (i % j == 0)
         sum += j;
     if (sum > i)
-      cout << sum << ' ' << sum - i << endl;
+      cout << i << ' ' << sum - i << endl;
   }
 }
