@@ -15,7 +15,7 @@ vector<string> split(const string& s) {
   string temp;
   vector<string> v;
   for (i = 0; i < len; ++i)
-    if (s[i] == '.' || i == len - 1) {
+    if (s[i] == '.' || i == len - 1) {  // Dot or end of string
       for (; j < i; ++j)
         temp += s[j]; 
       v.push_back(temp);
