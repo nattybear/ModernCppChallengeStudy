@@ -1,16 +1,18 @@
+#ifndef _IP_
+#define _IP_
+
 #include <string>
+#include <vector>
+using namespace std;
 
 class IPv4 {
   private:
-    std::string address;
+    string address;
   public:
-    const std::string& get_address() const { return address; }
-    void set_address(const std::string& address) {
-      this->address = address;
-    }
-    bool is_valid(int num) const {
-      if (num < 0 || num > 255)
-        return false;
-      return true;
-    }
+    const string& get_address() const { return address; }
+    bool set_address(const string& address);
+    vector<string> split(const string& s);
+    bool is_valid(int num) const;
 };
+
+#endif
