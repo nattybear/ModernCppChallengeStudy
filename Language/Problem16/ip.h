@@ -1,9 +1,20 @@
+#include <vector>
+#include <string>
+using namespace std;
+
+typedef vector<string> StringVector;
+
 union IPv4 {
   private:
-    unsigned int dword;
+    unsigned dword;
     unsigned char b[4];
+
   public:
-    IPv4(int dword);
-    string get_address() const;
-    void set_address(const string& address);
+    StringVector split(const string& s);
+
+    bool set_ip(const string& s);
+    string get_ip() const;
+
+    unsigned get_dword() const;
+    void set_dword(unsigned dword);
 };
